@@ -1,0 +1,38 @@
+create table student2(
+     id int,
+     name varchar(20),
+     password varchar(20),
+     age int,
+     sex varchar(5),
+     birthday timestamp,
+     score decimal(3,1),
+     reseum text
+     );
+create table goods(
+goods_id int,
+goods_name varchar(20),
+unit_price decimal(7,2),
+category varchar(20),
+provider varchar(20)
+);
+create table customer(
+customer_id int,
+name varchar(10),
+address varchar(25),
+email varchar(20),
+sex varchar(5),
+card_id varchar(20)
+);
+ create table purchase(
+     order_id int,
+     customer_id int,
+     goods_id int,
+     nums int
+  );
+create table student1(
+     id int,
+     name varchar(10),
+     score decimal(3,1),
+     email varchar(20)
+);
+insert into student1 values(1,"王"，89.5，“666@.com”)
