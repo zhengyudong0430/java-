@@ -1,36 +1,33 @@
 package text_0601;
+import java.util.Scanner;
 
-import java.util.*;
-public class Main{
+public class Main {
 
-
-    //判断是否为回文
-    public static boolean isHuiWen(String s){
-        int i=0;
-        int j=s.length()-1;
-        while(i<j){
-            if(s.charAt(i)!=s.charAt(j)){
-                return false;
+    public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String str = scanner.nextLine();
+    String result = "";
+    char[] array = str.toCharArray();
+    int count = 0;
+    for(int i = 0; i<array.length; i++) {
+        if(array[i]>='0' && array[i]<='9') {
+             count = 1;
+            int index = i;
+            for(int j = i+1; j<array.length; j++) {
+                if(array[j]>='0'&& array[j]<='9') {
+                    count++;
+                    index = j;
+                }else{
+                    break;
+                }
             }
-            i++;
-            j--;
+            if(count>result.length()) {
+                result = str.substring(i,index+1);
+            }else{
+                continue;
+            }
         }
-        return true;
     }
-    public static void main(String[] args){
-        Scanner sc =new Scanner(System.in);
-        String str1=sc.nextLine();
-        String str2=sc.nextLine();
-        int count=0;
-        for(int i=0;i<=str1.length();i++){
-            StringBuilder sb=new StringBuilder(str1);
-            sb.insert(i,str2);//从0号位置开始插入
-            if(isHuiWen(sb.toString())){
-                //说明是回文，计数+1
-                count++;
-            }
-        }
-        System.out.println(count);
+        System.out.println(result);
     }
 }
-
