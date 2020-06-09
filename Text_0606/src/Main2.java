@@ -1,30 +1,30 @@
-import java.lang.reflect.Array;
-import java.util.Arrays;
+
+
 import java.util.Scanner;
 
-
-public class Main2 {
+public class  Main2{
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        while (in.hasNext()) {
-            String str = in.nextLine();
-            String[] strs = str.split(" ");
-            int[] arr = new int[strs.length];
-            for (int i = 0; i < arr.length; i++) {
-                arr[i] = Integer.valueOf(strs[i]);
+        Scanner scanner  = new Scanner(System.in);
+        while (scanner.hasNext()) {
+            String  str = scanner.nextLine();
+            String  [] strs = str.split(" ");
+            int []array = new int [strs.length];
+            for(int i = 0; i<array.length; i++) {
+                array[i] = Integer.valueOf(strs[i]);
             }
-            int num = arr[0];
+            int num = array[0];
             int count = 0;
-            for (int j = 1; j < arr.length; j++) {
-                if (arr[j] == num) {
+            for(int j=1; j<array.length; j++) {
+                if(array[j] == num) {
                     count++;
-                } else if (count > 0) {
-                    count--;
-                } else {
-                    num = arr[j];
+                } else if(count>0) {
+                   count--;
+                }else {
+                    num = array[j];
                 }
             }
             System.out.println(num);
         }
+
     }
 }
